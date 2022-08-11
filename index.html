@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Poke Lista</title>
+    <link rel="stylesheet" href="pokemon.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"/>
+    <link href="https://www.dafontfree.net/embed/cG9rZW1vbi1waXhlbC1mb250LXJlZ3VsYXImZGF0YS80Mi9wLzg5Njg3L3Bva2Vtb25fcGl4ZWxfZm9udC50dGY" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header class="header-container">
+      <img class="logo" src="images/logo.png" />
+    </header>
+
+    <main class="main-container">
+
+      <section class="inputs-container">
+        <label for="min-value"> Nº Pokemon Inicial: </label>
+        <input type="number" placeholder="valor máximo 898" id="min" name="min-value" max="898" required>
+        <label for="max-value"> Nº Pokemon Final: </label>
+        <input type="number" placeholder="valor máximo 898" id="max" name="max-value" max="898" required>
+
+        <form>
+          <label for="pokemon-quantity"> Quantidade Pokemons: </label>
+          <select name="quantity-values" id="quantity">
+            <option value="10"> 10 </option>
+            <option value="20"> 20 </option>
+            <option value="30"> 30 </option>
+            <option id="maxValue" value="0"> Valor Máximo </option>        
+          </select>
+          <select name="tipo-lista" id="lists">
+            <option value="0"> Paginação </option>
+            <option value="1"> Scroll Infinito </option>
+          </select>        
+        </form>
+        <button id="clica" class="Btns">Filtrar</button>
+      </section>
+      <section class="pokelist-container">
+
+      </section>
+      <div class="btn-container">
+
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
