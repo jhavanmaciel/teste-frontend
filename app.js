@@ -93,7 +93,7 @@ const displayPokemon = (pokemon) => {
             
             <h2 class="pokemon-title">#${newPokemon.id} ${newPokemon.name}</h2>
             <div class="image-container">
-            <img class="card-image" src="${newPokemon.image}"/>            
+            <a href="https://www.pokemon.com/br/pokedex/${newPokemon.id}" target="_blank"><img class="card-image" src="${newPokemon.image}"/></a>          
             </div>
             <div class="stats-container"> 
             <p> HP: ${newPokemon.hp}</p>
