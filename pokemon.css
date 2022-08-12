@@ -98,6 +98,7 @@ h1 {
 }
 
 .pokemon:hover {
+  cursor: url(images/pokeball.svg), auto;
   animation-name: bounce;
   animation-duration: 2s;
 }
@@ -120,7 +121,8 @@ label {
 .inputs-container input,select {
   background-color: #e3e3e3;
 }
-.image-container:hover > .card-image {
+.pokemon a:hover > .card-image {
+  cursor: url(images/pokeball.svg), auto;
   transform: scale(1.55) translateY(-5px);
 }
 .pokemon-title {
