@@ -2,7 +2,7 @@ const pokelist = document.querySelector(".pokelist-container");
 let j;
 let minVal = document.querySelector("#min");
 let maxVal = document.querySelector("#max");
-let botao = document.querySelector("#clica");
+let botao = document.querySelector("#filterBtn");
 let nextBtn = document.createElement("button");
 let prevBtn = document.createElement("button");
 let loadBtn = document.createElement("button");
@@ -32,14 +32,12 @@ nextBtn.addEventListener("click", function nextPage() {
   
   prevBtn.innerHTML = "<< " + (j - 1);
   minVal = parseFloat(minVal) + parseFloat(selectValue);
-  console.log(minVal);
   fetchPokemon();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
 prevBtn.addEventListener("click", function previousPage() {
      j--;
-    console.log(j);
+ 
     if(j<=1){
       prevBtn.style.display = 'none';
   }
@@ -124,21 +122,19 @@ const displayPokemon = (pokemon) => {
 
   pokelist.innerHTML = pokemonHTMLString;
 };
-function quantitySelected() {
+function filter() {
   j = 1;
-  console.log(j);
+
   let btnContainer = document.querySelector(".btn-container");
     if(btnContainer.length > 0){
-        console.log('ó');
+
     }
-  console.log(minVal, maxVal, selectValue, totalVal);
   minVal = document.querySelector("#min").value;
   maxVal = document.querySelector("#max").value;
 
   // validações
 
   if (parseFloat(minVal) > parseFloat(maxVal)) {
-    console.log(minVal, maxVal, selectValue);
     alert("O valor minimo não pode ser maior que o valor máximo!");
     return;
   }
@@ -164,7 +160,6 @@ function quantitySelected() {
  
 
   if (document.querySelector("#quantity").value == 0) {
-    console.log(minVal, maxVal);
     selectValue = parseFloat(maxVal - minVal);
     console.log(selectValue);
     fetchPokemon();
@@ -184,7 +179,6 @@ function quantitySelected() {
   }
 
   selectValue = document.querySelector("#quantity").options[document.querySelector("#quantity").selectedIndex].value;
-  console.log(minVal, maxVal, selectValue);
   btnContainer.appendChild(nextBtn);
   nextBtn.style.display = "block";
   btnContainer.appendChild(prevBtn);
@@ -192,4 +186,4 @@ function quantitySelected() {
   nextBtn.innerHTML =   j + " >>";
   fetchPokemon();
 }
-botao.addEventListener("click", quantitySelected);
+botao.addEventListener("click", filter);
